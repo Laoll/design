@@ -273,13 +273,13 @@ export default class Design extends PureComponent {
             className={`${prefix}-design__restore-cache-alert`}
             closable
             onClose={this.onRestoreCacheAlertClose}
-            type="warning"
+            type='warning'
           >
             {cacheRestoreMessage}
             <a
               className={`${prefix}-design__restore-cache-alert-use`}
               onClick={this.restoreCache}
-              href="javascript:void(0);"
+              href='!#'
             >
               使用
             </a>
@@ -291,7 +291,7 @@ export default class Design extends PureComponent {
     );
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.cacheAppendableComponents(this.props.components);
   }
 
@@ -308,7 +308,7 @@ export default class Design extends PureComponent {
     this.uninstallBeforeUnloadHook();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.validateCacheProps(nextProps);
 
     let shouldUpdateInstanceCountMap = false;
@@ -506,7 +506,9 @@ export default class Design extends PureComponent {
       newValue = value.slice();
       const { addComponentOverlayPosition } = this.state;
       const { selectedUUID } = this.state;
-      const selectedIndex = findIndex(value, { [UUID_KEY]: selectedUUID });
+      const selectedIndex = findIndex(value, {
+        [UUID_KEY]: selectedUUID,
+      });
 
       // 两种位置，插入到当前选中的前面或者后面
       const delta =

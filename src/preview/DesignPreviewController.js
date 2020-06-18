@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { pick, get } from 'lodash';
 import { Draggable } from 'react-beautiful-dnd';
+import 'zent/css/button.css';
+import 'zent/css/pop.css';
 import Pop from 'zent/es/pop';
 
 import { DND_PREVIEW_CONTROLLER, DEFAULT_BACKGROUND } from './constants';
@@ -247,9 +249,9 @@ class DesignPreviewController extends PureComponent {
 function DeleteButton({ prefix, onDelete }) {
   return (
     <Pop
-      content="确定删除？"
-      trigger="click"
-      position="left-center"
+      content='确定删除？'
+      trigger='click'
+      position='left-center'
       centerArrow
       onConfirm={onDelete}
       wrapperClassName={`${prefix}-design-preview-controller__action-btn-delete`}
@@ -301,15 +303,15 @@ function AddMarker({ prefix }) {
 function IconAdd({ prefix }) {
   return (
     <svg
-      width="17"
-      height="17"
-      viewBox="0 0 17 17"
-      xmlns="http://www.w3.org/2000/svg"
+      width='17'
+      height='17'
+      viewBox='0 0 17 17'
+      xmlns='http://www.w3.org/2000/svg'
       className={`${prefix}-design-preview-controller__icon-add`}
     >
-      <g fill="none" fillRule="evenodd">
-        <circle cx="8.5" cy="8.5" r="8.5" />
-        <path d="M8 8H5v1h3v3h1V9h3V8H9V5H8v3z" fill="#FFF" />
+      <g fill='none' fillRule='evenodd'>
+        <circle cx='8.5' cy='8.5' r='8.5' />
+        <path d='M8 8H5v1h3v3h1V9h3V8H9V5H8v3z' fill='#FFF' />
       </g>
     </svg>
   );
@@ -320,18 +322,18 @@ class IconDelete extends PureComponent {
     const { prefix, onClick } = this.props;
     return (
       <svg
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='20'
+        viewBox='0 0 20 20'
+        xmlns='http://www.w3.org/2000/svg'
         className={`${prefix}-design-preview-controller__icon-delete`}
         onClick={onClick}
       >
-        <g fill="none" fillRule="evenodd">
-          <circle cx="10" cy="10" r="10" />
+        <g fill='none' fillRule='evenodd'>
+          <circle cx='10' cy='10' r='10' />
           <path
-            fill="#FFF"
-            d="M13.75 7.188l-.937-.938L10 9.063 7.188 6.25l-.938.937L9.062 10 6.25 12.812l.937.938L10 10.938l2.812 2.812.938-.937L10.938 10"
+            fill='#FFF'
+            d='M13.75 7.188l-.937-.938L10 9.063 7.188 6.25l-.938.937L9.062 10 6.25 12.812l.937.938L10 10.938l2.812 2.812.938-.937L10.938 10'
           />
         </g>
       </svg>

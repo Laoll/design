@@ -89,7 +89,7 @@ class Emotion extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.initTabs();
   }
 
@@ -128,8 +128,8 @@ class Emotion extends Component {
 
       return (
         <TabPanel tab={item.name} id={item.tplInfo} key={index}>
-          <div className="emotion-content">
-            <div className="emotion-list-wrapper">{tabContent}</div>
+          <div className='emotion-content'>
+            <div className='emotion-list-wrapper'>{tabContent}</div>
           </div>
         </TabPanel>
       );
@@ -157,7 +157,7 @@ class Emotion extends Component {
       <Tabs
         activeId={this.state.activeId}
         onTabChange={this.onTabChange}
-        className="emotion-tabs"
+        className='emotion-tabs'
       >
         {this.allTabs}
       </Tabs>
@@ -165,7 +165,7 @@ class Emotion extends Component {
   }
 }
 
-export default function(options) {
+export default function (options) {
   openDialog({
     dialogId,
     className: 'zent-design-component-richtext__emotion',
